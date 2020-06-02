@@ -4,7 +4,7 @@ const app = new Clarifai.App({
     apiKey: '45df30049c0142f2b21d0ff0c5bf1139',
   });
 
-const handleImage = (req, res, db) =>{
+const handleEntryCount = (req, res, db) =>{
     const { id } = req.body;
     // let found = false
 

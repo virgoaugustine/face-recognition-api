@@ -28,7 +28,7 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => res.send('API is working...'))
 app.post('/register', (req, res) => register.handleRegister(req, res, db, bcrypt));
 app.post('/login', (req, res) => login.handleLogin(req,res,db,bcrypt));
-app.put('/image', (req, res) => image.handleImage(req, res, db))
+app.put('/entry', (req, res) => image.handleEntryCount(req, res, db))
 app.post('/imageurl', (req, res) => image.handleApiCall(req, res));
 app.get('/profile/:id', (req, res) => profile.handleProfile(req, res, db))
 
