@@ -26,6 +26,6 @@ const handleApiCall = (req, res) => {
 }
 
 module.exports = {
-    handleImage,
+    handleEntryCount,
     handleApiCall
 };
