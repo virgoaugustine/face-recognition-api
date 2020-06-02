@@ -9,6 +9,8 @@ const login = require('./controllers/login')
 const image = require('./controllers/image')
 const profile = require('./controllers/profile')
 
+app.use(cors())
+app.use(bodyParser.json())
 
 
 const db = require('knex')({
@@ -22,8 +24,6 @@ const db = require('knex')({
     }
 });
 
-app.use(cors())
-app.use(bodyParser.json())
 
 app.get('/', (req, res) => res.send('API is working...'))
 app.post('/register', (req, res) => register.handleRegister(req, res, db, bcrypt));
