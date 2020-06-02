@@ -42,4 +42,6 @@ const handleRegister = (req, res, db, bcrypt) =>{
     .catch(err => res.status(400).json(err.detail))
 }
 
-module.exports = {handleRegister: handleRegister}
+module.exports = {
+    handleRegister
+}

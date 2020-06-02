@@ -9,9 +9,6 @@ const login = require('./controllers/login')
 const image = require('./controllers/image')
 const profile = require('./controllers/profile')
 
-app.use(cors())
-app.use(bodyParser.json())
-
 
 const db = require('knex')({
     client: 'pg',
@@ -21,6 +18,9 @@ const db = require('knex')({
        
     }
 });
+
+app.use(cors())
+app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => res.send('API is working...'))
