@@ -9,19 +9,16 @@ const login = require('./controllers/login')
 const image = require('./controllers/image')
 const profile = require('./controllers/profile')
 
-app.use(cors())
-
 const db = require('knex')({
     client: 'pg',
     connection: {
         connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-          }
+        ssl: true
     }
 });
 
 
+app.use(cors())
 app.use(bodyParser.json())
 
 
