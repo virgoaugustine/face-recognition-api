@@ -25,7 +25,7 @@ const db = require('knex')({
 app.use(bodyParser.json())
 
 
-app.get('/', (req, res) => res.send('API is working...'))
+app.get('/', (req, res) => res.send('API is running...'))
 app.post('/register', (req, res) => register.handleRegister(req, res, db, bcrypt));
 app.post('/login', (req, res) => login.handleLogin(req,res,db,bcrypt));
 app.put('/entry', (req, res) => image.handleEntryCount(req, res, db))
