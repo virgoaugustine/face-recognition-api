@@ -27,5 +27,5 @@ const handleApiCall = (req, res) => {
 
 module.exports = {
     handleEntryCount,
-    handleApiCall
+    handleApiCall,
 };
