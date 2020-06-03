@@ -16,7 +16,7 @@ const handleLogin = (req, res, db, bcrypt) => {
             res.status(400).json('Wrong Credentials')
         }
     })
-    .catch(err => res.status(400).json(err))
+    .catch(err => res.json(err))
 }
 
 module.exports = {handleLogin: handleLogin}
