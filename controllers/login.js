@@ -5,8 +5,9 @@ const handleLogin = (req, res, db, bcrypt) => {
 
     db.select('email', 'hash').from('login').where('email', '=', email)
     .then(data => {
+        console.log('The data returned is: ', data)
         const correctPassword = bcrypt.compareSync(password, data[0].hash)
-        res.json(correctPassword)
+        console.log('correct password run: ', correctPassword)
 
         if(correctPassword){
             return db.select('*').from('users')
