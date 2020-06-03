@@ -39,7 +39,7 @@ const handleRegister = (req, res, db, bcrypt) =>{
     .returning('*')
     .insert(newUser)
     .then( user => res.json(user[0]))
-    .catch(err => res.status(400).json(err.detail))
+    .catch(err => res.status(400).json(err))
 }
 
 module.exports = {
