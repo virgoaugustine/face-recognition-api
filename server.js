@@ -13,9 +13,10 @@ const profile = require('./controllers/profile')
 const db = require('knex')({
     client: 'pg',
     connection: {
-        connectionString: 'https://safe-springs-49156.herokuapp.com',
-        ssl: true
-       
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+          }
     }
 });
 
