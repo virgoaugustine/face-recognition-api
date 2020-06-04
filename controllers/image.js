@@ -1,12 +1,11 @@
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
-    apiKey: '45df30049c0142f2b21d0ff0c5bf1139',
+    apiKey: proccess.env.API_KEY,
   });
 
 const handleEntryCount = (req, res, db) =>{
     const { id } = req.body;
-    // let found = false
 
     db('users').where({id: id})
     .increment('entries',1)
