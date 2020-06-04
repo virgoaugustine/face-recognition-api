@@ -12,7 +12,7 @@ const handleEntryCount = (req, res, db) =>{
     .increment('entries',1)
     .returning('entries')
     .then(entries =>{
-        entries.length ? res.json(entries) : res.json('Could not fetch entries from user')
+        entries.length ? res.json(entries[0]) : res.json('Could not fetch entries from user')
     })
     .catch(err => res.json('Error accessing database'))
 }
