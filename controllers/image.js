@@ -1,7 +1,7 @@
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
-    apiKey: proccess.env.API_KEY,
+    apiKey: process.env.API_KEY,
   });
 
 const handleEntryCount = (req, res, db) =>{
